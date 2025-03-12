@@ -1,0 +1,38 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Diretórios do ambiente de desenvolvimento
+.env
+.env.local
+.env.*.local
+
+# Arquivos de logs
+logs/
+*.log
+*.log.*
+
+# Diretórios de build e distribuição
+dist/
+build/
+
+# Arquivos de dependências locais
+.pnp/
+.pnp.js
+
+# Sistema de cache
+.cache/
+.vscode/
+.idea/
+
+# Arquivos de pacotes
+package-lock.json
+yarn.lock
+
+# Arquivos de banco de dados
+*.sqlite
+*.db
+
+# 
