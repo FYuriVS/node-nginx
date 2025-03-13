@@ -22,7 +22,8 @@ services:
       - DB_PASSWORD=root
       - DB_NAME=nodedb
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: mysql:5.7
@@ -33,6 +34,12 @@ services:
       MYSQL_DATABASE: nodedb
     volumes:
       - db_data:/var/lib/mysql
+    healthcheck:
+      test:
+        ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
 
 volumes:
   db_data:
