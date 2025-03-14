@@ -21,6 +21,7 @@ services:
       - DB_USER=root
       - DB_PASSWORD=root
       - DB_NAME=nodedb
+    command: sh -c "npm install && node main.js"
     depends_on:
       db:
         condition: service_healthy
